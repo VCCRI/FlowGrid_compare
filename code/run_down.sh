@@ -8,13 +8,13 @@ runFlock(){
 
 #loc data bin_b eps k
 runAllAlg(){
-	python2.7 runSingleFlowGird.py $1 $2 $3 $4 $1
+	python3.4 runSingleFlowGird.py $1 $2 $3 $4 $1
 	Rscript runFlowSOM.R $1 $2 $5 $1
 	Rscript runFlowPeaks.R $1 $2 $1
 	runFlock $1 $2 $1
 	for j in FlowGrid FlowSOM FlowPeaks Flock
 	do
-		python2.7 evaluate.py  $1 $2 $j $1 &
+		python3.4 evaluate.py  $1 $2 $j $1 &
 	done
 	wait
 }
