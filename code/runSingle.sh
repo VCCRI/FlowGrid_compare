@@ -121,8 +121,10 @@ mkdir ../Flock ../FlowPeaks ../FlowSOM ../FlowGrid  ../result
 runSmallDataset "data" 2>&1 |tee -a ../single.log
 python readSingle.py ../single.log
 python summary.py
-'''
-The following function is to run the seaflow data set
+
+#The following function is to run the seaflow data set,
+#if you have not download it, you could make it as a comment or use sh down.sh
+# and preprocess the data.
 runLargeDataset "data" 2>&1 |tee -a ../single.log
 python readSingle.py ../single.log
-'''
+
