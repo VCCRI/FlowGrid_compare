@@ -7,13 +7,13 @@ runFlock(){
 
 #loc data bin_b eps k
 runAllAlg(){
-	python3.4 runSingleFlowGird.py $1 $2 $3 $4 FlowGrid
+	python runSingleFlowGird.py $1 $2 $3 $4 FlowGrid
 	Rscript runFlowSOM.R $1 $2 $5 FlowSOM
 	Rscript runFlowPeaks.R $1 $2 FlowPeaks
 	runFlock $1 $2 Flock
 	for j in FlowGrid FlowSOM FlowPeaks Flock 
 	do
-		python3.4 evaluate.py  $j $2 $j label &
+		python evaluate.py  $j $2 $j label &
 	done
 	wait
 }
@@ -115,12 +115,14 @@ runLargeDataset(){
 	runAllAlg $1 thompson0 27  1.8 4
 }
 
+
+
 rm ../single.log
 rm ../Flock ../FlowPeaks ../FlowSOM ../FlowGrid ../result -r
 mkdir ../Flock ../FlowPeaks ../FlowSOM ../FlowGrid  ../result
-runSmallDataset "data" 2>&1 |tee -a ../single.log
-python readSingle.py ../single.log
-python summary.py
+#runSmallDataset "data" 2>&1 |tee -a ../single.log
+#python readSingle.py ../single.log
+#python summary.py
 
 #The following function is to run the seaflow data set,
 #if you have not download it, you could make it as a comment or use sh down.sh

@@ -60,7 +60,7 @@ class div_bin():
 	def unique(self):
 		idd=self.dividing_bins()
 		id_list=list(idd.keys())
-		counts=np.zeros(len(id_list),dtype=int)
+		counts=np.zeros(len(id_list))
 		unique_index=np.zeros(self.data.shape[0],dtype=int)
 		for k,i in enumerate(id_list):
 			counts[k]=idd[i].shape[0]
@@ -180,7 +180,7 @@ class FlowGrid():
 						if core_non[cur_bin]:
 							queue.update(filter(filter_f,query_d[cur_bin]))
 			else:
-				bin_list=list(filter(filter_f,bin_list))
+				bin_list=filter(filter_f,bin_list)
 		return bin_labels
 
 	def density_scan(self,unique_array, counts):
