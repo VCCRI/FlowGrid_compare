@@ -31,8 +31,8 @@ runSingleDataset(){
 
 rm ../down  -r
 mkdir ../down 
-python down_sampling.py thompson0 down 3
+python down_sampling.py thompson0 down 11
 rm ../down.log
-runSingleDataset down 2 27 1.8 4 2>&1 |tee -a ../down.log
+runSingleDataset down 10 27 1.8 4 2>&1 |tee -a ../down.log
 python read_down.py ../down.log
 python plot_time_ari.py thompson0
