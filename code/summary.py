@@ -17,11 +17,11 @@ for i in data:
 		find=rec.findall(i[0])
 		if find:
 			if k==3:
+				t=False
 				break
 			d[name_d[k]].append(find+list(i[1:]))
 			t=False
 			break
-
 	if t:
 		d["M"].append([i[0]]+list(i[1:]))
 key_list,m_list,st_list=[],[],[]
