@@ -23,5 +23,5 @@ The down.sh file is to download the Seaflow data and to precoess the data. As th
 The runSingle.sh file is to run the comparison using Flow-CAP, Multi center data and Seaflow data sets.
 
 The ru_down.sh file is to down sample the Seaflow data set and run the comparison using down sampled data.
-
+### Result
 If you run the run_all.sh, all the result will output to result folder. In result folder there will be four files including single.csv, summary.csv, simulate_result.csv and thompson0_time.pdf. The single.csv shows the number of markers, the number of dimensions, runtime and ARI for each sample, while summary.csv summaries the result of single.csv showing the mean of the runtime and ARI for every data set. simulate_result.csv and thompson0_time.pdf show the result for the down sampling.
